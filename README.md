@@ -30,38 +30,60 @@ Offer a centralized, customizable view of AWS resources across multiple regions.
 # Procedure:
 
 **Step 1: Create an EC2 Instance:**
-1. We first go to AWS EC2 Console:
-   - As we Open our AWS Management Console and go to EC2 or search it.
-2. We  launch a New Instance:
-   - Click Launch Instance.
-3. Choose an Amazon Machine Image (AMI):An Amazon Machine Image (AMI) is a pre-configured template that contains the necessary software, operating system, and application environment required to launch an EC2 instance in AWS. AMIs help users quickly deploy instances with consistent configurations, reducing setup time and ensuring scalability.
-   - Select Amazon Linux AMI.
-4. Choose Instance Type:
-   - Select t2.micro (for basic web applications).
-5. Select Key Pair:
-   - We create a new key pair name task_2 for SSH access.
-6. Configure Network Settings:
+1. We first go to the AWS EC2 Console:
+   - We open our AWS Management Console and navigate to EC2 or search for it.
+2. We launch a New Instance:
+   - We click on Launch Instance.
+3. We choose an Amazon Machine Image (AMI):
+   - An Amazon Machine Image (AMI) is a pre-configured template that contains the necessary software, operating system, and application environment required to launch an EC2 instance in AWS. AMIs help us quickly deploy instances with consistent configurations, reducing setup time and ensuring scalability.
+   - We select the Amazon Linux AMI.
+4. We choose the Instance Type:
+   - We select t2.micro (suitable for basic web applications).
+5. We select the Key Pair:
+   - We create a new key pair named ** task_2 **for SSH access.
+6. We configure Network Settings:
    - We enable Public IP (for internet access).
    - We allow HTTP (port 80) for web application access.
-7. Launch the Instance:
-   - Laastly, we click Launch Instance and wait for it to start.
+7. We launch the Instance:
+   - Finally, we click Launch Instance and wait for it to start.
 
 **Step 2: Set Up CloudWatch Alarms**
-1. Go to AWS CloudWatch Console
-   - Open CloudWatch from the AWS console.
-   - Create an Alarm
+1. We go to the AWS CloudWatch Console:
+   - We open CloudWatch from the AWS console.
+2. Create an Alarm:
+   - We click on Alarms > Create Alarm:
+3. Choose a Metric:
+   - We click Select metric > EC2 > Per-instance Metrics:
+   - We select CPUUtilization (or another metric like Network In/Out).
+4. Set the Condition:
+   - If CPU Utilization > 80% for 2 consecutive periods.
+5. Set Actions:
+   - We choose EC2 Actions > Stop this instance (to stop the instance when the threshold is reached).
+6. Review and create.
+   - We click Next, review the alarm, and Create Alarm.
 
-2. Click on Alarms > Create Alarm.
-   - Choose a Metric
+**Step 3: Monitor Application Using CloudWatch Metrics**
+1. We go to the EC2 Console:
+   - We open the EC2 Dashboard.
+2. We access CloudWatch Metrics:
+   - We navigate to Monitoring > View all CloudWatch metrics.
+3. We select Metrics to Monitor:
+   - We click EC2 > Per-instance Metrics.
+   - We choose metrics like:
+     - EBS Write Operations
+     - Network In/Out
+     - CPU Utilization
+4. We view Metrics Graphs:
+   - We will see real-time graphs for the selected metrics.
 
-3. Click Select metric > EC2 > Per-instance Metrics.
-   - Select CPUUtilization (or another metric like Network In/Out).
-   - Set Condition
-
-Example: If CPU Utilization > 80% for 2 consecutive periods.
-Set Actions
-
-4. Choose EC2 Actions > Stop this instance (to stop the instance when the threshold is reached).
-   - Review and Create
-
-5. Click Next, review the alarm, and Create Alarm.
+**Step 4: Create a CloudWatch Dashboard:**
+1. We go to the CloudWatch Dashboard:
+   - We open CloudWatch from the AWS Console.
+   - We create a New Dashboard.
+2. We click Dashboards > Create dashboard:
+   - We enter a dashboard name.
+   - We add Widgets.
+3. We choose a Widget Type (Graph, Number, Table):
+   - We select CloudWatch as the Data Source.
+   - We select Metrics to Monitor.
+4. We click Save to finalize our monitoring dashboard.
