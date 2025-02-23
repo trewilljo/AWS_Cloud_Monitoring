@@ -24,7 +24,7 @@ Is a real-time monitoring service that collects and tracks metrics from AWS reso
 ### **Amazon CloudWatch Dashboards:** ###
 Offer a centralized, customizable view of AWS resources across multiple regions. They allow users to monitor key metrics, visualize trends, and create operational playbooks for efficient incident response. By customizing dashboards with selected metrics, alarms, and color-coded graphs, teams can enhance visibility and streamline communication during critical events. Together, EC2 and CloudWatch provide a robust solution for managing, monitoring, and optimizing cloud-based applications.
 
-# Task:
+## Task:
 - SET UP MONITORING FOR A CLOUDBASED APPLICATION USING AWS CLOUDWATCH.
 
 # Procedure:
