@@ -70,7 +70,7 @@ Offer a centralized, customizable view of AWS resources across multiple regions.
    - Under the Actions section, we choose "EC2 Actions" and select the option to "Stop this instance." This action will automatically stop the EC2 instance when the defined threshold is reached, helping to prevent resource exhaustion.<a href="condition" img src="action.png" />(Action.)</a>
 
 6. Review and Create:
-   -  Click "Next" to proceed to the review phase. Examine the alarm configuration details to ensure accuracy, then click "Create Alarm" to finalize the setup. This alarm will now actively monitor your specified metrics and execute the defined actions when the conditions are met.<a href="condition" img src="Preview and create.png" />(Review and create.)</a>
+   -  Click "Next" to proceed to the review phase. Examine the alarm configuration details to ensure accuracy, then click "Create Alarm" to finalize the setup. This alarm will now actively monitor your specified metrics and execute the defined actions when the conditions are met.<a href="condition" img src="Preview and create.png" />Preview and create.png</a>
   
 <img src="Cloud_Alarm.png">
 
