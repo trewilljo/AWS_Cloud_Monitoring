@@ -110,4 +110,4 @@ Offer a centralized, customizable view of AWS resources across multiple regions.
 4. Click "Save" to Complete the Configuration of the Monitoring Dashboard:
    - After customizing the dashboard with the selected widgets and metrics, click the "Save" button to finalize your configurations. This will enable you to monitor the chosen metrics effectively and make informed decisions based on the data presented.
   
-<img src="dashboard.png">
+<img src="dashboard.png" height="550" width="1000">
