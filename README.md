@@ -30,60 +30,84 @@ Offer a centralized, customizable view of AWS resources across multiple regions.
 # Procedure:
 
 **Step 1: Create an EC2 Instance:**
-1. We first go to the AWS EC2 Console:
-   - We open our AWS Management Console and navigate to EC2 or search for it.
-2. We launch a New Instance:
-   - We click on Launch Instance.
-3. We choose an Amazon Machine Image (AMI):
-   - An Amazon Machine Image (AMI) is a pre-configured template that contains the necessary software, operating system, and application environment required to launch an EC2 instance in AWS. AMIs help us quickly deploy instances with consistent configurations, reducing setup time and ensuring scalability.
-   - We select the Amazon Linux AMI.
-4. We choose the Instance Type:
-   - We select t2.micro (suitable for basic web applications).
-5. We select the Key Pair:
-   - We create a new key pair named ** task_2 **for SSH access.
-6. We configure Network Settings:
-   - We enable Public IP (for internet access).
-   - We allow HTTP (port 80) for web application access.
-7. We launch the Instance:
-   - Finally, we click Launch Instance and wait for it to start.
+1. Access the AWS EC2 Console:
+   - Begin by opening the AWS Management Console and navigating to the EC2 service, or use the search feature to locate it quickly.
+
+2. Launch a New Instance:
+   - Click on the "Launch Instance" button to initiate the process of creating a new EC2 instance.
+
+3. Choose an Amazon Machine Image (AMI):
+   - An Amazon Machine Image (AMI) is a pre-configured template that includes the essential software, operating system, and application environment needed to launch an EC2 instance on AWS. AMIs facilitate the rapid deployment of instances with consistent configurations, thereby minimizing setup time and enabling scalability.
+   - Select the Amazon Linux AMI, which provides a stable and performant environment for various applications.
+
+4. Choose the Instance Type:
+   - Opt for the t2.micro instance type, which is well-suited for basic web applications and qualifies for the AWS Free Tier.
+
+5. Select the Key Pair:
+   - Create a new key pair named **task_2** to enable SSH access to the instance securely.
+
+6. Configure Network Settings:
+   - Enable the option for a Public IP address, ensuring the instance can access the internet.
+   - Allow HTTP traffic by opening port 80 to enable access to the web application hosted on the instance.
+
+7. Launch the Instance:
+   - Finally, click on the "Launch Instance" button and wait for the instance to initialize. Once launched, you will be able to access it according to the configured settings.
 
 **Step 2: Set Up CloudWatch Alarms**
-1. We go to the AWS CloudWatch Console:
-   - We open CloudWatch from the AWS console.
+1. Access the AWS CloudWatch Console:
+   - Begin by opening the CloudWatch service from the AWS Management Console, which provides advanced monitoring capabilities for your AWS resources.
+
 2. Create an Alarm:
-   - We click on Alarms > Create Alarm:
+   - Click on the Alarms section and then select "Create Alarm" to initiate the alarm configuration process.
+
 3. Choose a Metric:
-   - We click Select metric > EC2 > Per-instance Metrics:
-   - We select CPUUtilization (or another metric like Network In/Out).
+   - Click on "Select metric," then navigate to EC2 and select "Per-instance Metrics."
+   - Choose the relevant metric to monitor, such as CPUUtilization, or alternatively select another metric like Network In/Out.
+
 4. Set the Condition:
-   - If CPU Utilization > 80% for 2 consecutive periods.
+   - We specify the condition for the alarm: set the threshold to trigger if CPU Utilization exceeds 80% for two consecutive periods, which will help in identifying instances that may be overutilized.
+
 5. Set Actions:
-   - We choose EC2 Actions > Stop this instance (to stop the instance when the threshold is reached).
-6. Review and create.
-   - We click Next, review the alarm, and Create Alarm.
+   - Under the Actions section, we choose "EC2 Actions" and select the option to "Stop this instance." This action will automatically stop the EC2 instance when the defined threshold is reached, helping to prevent resource exhaustion.
+
+6. Review and Create:
+   -  Click "Next" to proceed to the review phase. Examine the alarm configuration details to ensure accuracy, then click "Create Alarm" to finalize the setup. This alarm will now actively monitor your specified metrics and execute the defined actions when the conditions are met.
+  
+<img src="Cloud_Alarm.png">
 
 **Step 3: Monitor Application Using CloudWatch Metrics**
-1. We go to the EC2 Console:
-   - We open the EC2 Dashboard.
-2. We access CloudWatch Metrics:
-   - We navigate to Monitoring > View all CloudWatch metrics.
-3. We select Metrics to Monitor:
-   - We click EC2 > Per-instance Metrics.
-   - We choose metrics like:
-     - EBS Write Operations
-     - Network In/Out
-     - CPU Utilization
-4. We view Metrics Graphs:
-   - We will see real-time graphs for the selected metrics.
+1. Access the EC2 Console:
+   - Begin by opening the EC2 Dashboard from the AWS Management Console, which allows for the management of your Amazon Elastic Compute Cloud (EC2) instances.
 
+2. Access CloudWatch Metrics:
+   - Navigate to the Monitoring section and select "View all CloudWatch metrics" to explore the various monitoring capabilities available for your EC2 instances.
+
+3. Select Metrics to Monitor:
+   - Click on EC2 and then select "Per-instance Metrics" to view the metrics specific to each EC2 instance.
+   - Choose relevant metrics to monitor, such as:
+     - EBS Write Operations, which tracks the number of write operations on your Elastic Block Store (EBS) volumes.
+     - Network In/Out, which indicates the volume of network traffic entering and leaving your instances.
+     - CPU Utilization, which measures the percentage of allocated EC2 compute units that are being used.
+
+4. View Metrics Graphs:
+   - After selecting the desired metrics, you will be presented with real-time graphs that visually represent the performance of the chosen metrics, enabling you to closely monitor system activity and resource utilization.
+
+<img src="Cloud_Alarm.png">
 **Step 4: Create a CloudWatch Dashboard:**
-1. We go to the CloudWatch Dashboard:
-   - We open CloudWatch from the AWS Console.
-   - We create a New Dashboard.
-2. We click Dashboards > Create dashboard:
-   - We enter a dashboard name.
-   - We add Widgets.
-3. We choose a Widget Type (Graph, Number, Table):
-   - We select CloudWatch as the Data Source.
-   - We select Metrics to Monitor.
-4. We click Save to finalize our monitoring dashboard.
+1. Access the CloudWatch Dashboard:
+   - Begin by launching the CloudWatch service from the AWS Management Console. This tool provides comprehensive monitoring for AWS resources and applications.
+   - Proceed to initiate the creation of a new dashboard, which will serve as a customized interface for visualizing relevant metrics.
+
+2. Navigate to Dashboards > Create Dashboard:
+   - Input a descriptive and relevant name for the dashboard that reflects its purpose and the specific metrics it will monitor.
+   - Enhance the dashboard by adding various widgets that will display data in a meaningful way.
+
+3. Select the Desired Widget Type (Graph, Number, Table):
+   - Carefully choose the appropriate widget type depending on the type of data representation required. Options include Graphs for trend analysis, Numbers for displaying key performance indicators, and Tables for detailed tabular data.
+   - Designate CloudWatch as the data source to ensure accurate and real-time data visualization.
+   - Identify and select the specific metrics that require monitoring, ensuring they align with your operational and business objectives.
+
+4. Click "Save" to Complete the Configuration of the Monitoring Dashboard:
+   - After customizing the dashboard with the selected widgets and metrics, click the "Save" button to finalize your configurations. This will enable you to monitor the chosen metrics effectively and make informed decisions based on the data presented.
+  
+<img src="dashboard.png">
