@@ -66,6 +66,7 @@ Offer a centralized, customizable view of AWS resources across multiple regions.
 
 4. Set the Configuration:
    - We specify the configuration for the alarm: set the threshold to trigger if CPU Utilization exceeds 80% for two consecutive periods, which will help in identifying instances that may be overutilized.
+     /assets/images/configuration.png
 5. Set Actions:
    - Under the Actions section, we choose "EC2 Actions" and select the option to "Stop this instance." This action will automatically stop the EC2 instance when the defined threshold is reached, helping to prevent resource exhaustion.
 
