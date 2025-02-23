@@ -65,9 +65,9 @@ Offer a centralized, customizable view of AWS resources across multiple regions.
    - Choose the relevant metric to monitor, such as CPUUtilization, or alternatively select another metric like Network In/Out.
 
 4. Set the Configuration:
-   - We specify the configuration for the alarm: set the threshold to trigger if CPU Utilization exceeds 80% for two consecutive periods, which will help in identifying instances that may be overutilized<a href="condition" img src="configuration.png" />(Configuration.)</a>
+   - We specify the configuration for the alarm: set the threshold to trigger if CPU Utilization exceeds 80% for two consecutive periods, which will help in identifying instances that may be overutilized<a img src="configuration.png" />(Configuration.)</a>
 5. Set Actions:
-   - Under the Actions section, we choose "EC2 Actions" and select the option to "Stop this instance." This action will automatically stop the EC2 instance when the defined threshold is reached, helping to prevent resource exhaustion.<a href="condition" img src="action.png" />(Action.)</a>
+   - Under the Actions section, we choose "EC2 Actions" and select the option to "Stop this instance." This action will automatically stop the EC2 instance when the defined threshold is reached, helping to prevent resource exhaustion.<a img src="action.png" />(Action.)</a>
 
 6. Review and Create:
    -  Click "Next" to proceed to the review phase. Examine the alarm configuration details to ensure accuracy, then click "Create Alarm" to finalize the setup. This alarm will now actively monitor your specified metrics and execute the defined actions when the conditions are met.<a href="condition" img src="Preview and create.png" />Preview and create.png</a>
